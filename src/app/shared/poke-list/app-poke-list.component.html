@@ -1,9 +1,13 @@
 <!-- Search -->
-<poke-search (emmitSearch)="getSearch($event)"></poke-search>
+<app-poke-search (emmitSearch)="getSearch($event)"/>
 
 <section class="listagem">
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
+    <a
+      [routerLink]="['details', pokemon.status.id]"
+      class="pokemon"
+      *ngIf="pokemon.status"
+    >
       <section class="pokemon__status">
         <h2>
           {{ pokemon.name }}
@@ -11,7 +15,7 @@
 
         <ul>
           <li *ngFor="let value of pokemon.status.types">
-            {{value.type.name}}
+            {{ value.type.name }}
           </li>
         </ul>
       </section>
@@ -20,7 +24,7 @@
         <img
           [src]="pokemon.status.sprites.other.dream_world.front_default"
           [alt]="pokemon.name"
-        >
+        />
       </section>
     </a>
   </ng-template>
@@ -31,4 +35,4 @@
   alt="Deu erro na mostragem do pokemon"
   width="100%"
   *ngIf="apiError"
->
+/>

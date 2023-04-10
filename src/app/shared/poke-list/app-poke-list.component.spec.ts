@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokeListComponent } from './poke-list.component';
+import { PokeListComponent } from './app-poke-list.component';
 
 describe('PokeListComponent', () => {
   let component: PokeListComponent;
@@ -8,9 +8,8 @@ describe('PokeListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokeListComponent ]
-    })
-    .compileComponents();
+      declarations: [PokeListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
